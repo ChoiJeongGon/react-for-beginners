@@ -9,11 +9,11 @@ function App() {
         if (toDo === "") {
             return;
         }
+        setToDos((currentArray) => [toDo, ...currentArray]);
         setToDo("");
-        setToDos(currentArray => [toDo, ]);
     };
-
     return <div>
+        <h1>My To Dos ({toDos.length})</h1>
         <form onSubmit={onSubmit}>
             <input
                 onChange={onChange}
