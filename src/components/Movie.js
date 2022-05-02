@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 // React Runter = > npm install react-router-dom
 
-function Movie({ coverImg, title, summary, genres }) {
+function Movie({ id, coverImg, title, summary, genres }) {
   return (
     <div>
       <img src={coverImg} alt={title}></img>
       <h2>
-        <Link to="/movie">{title}</Link>
+        <Link to={`/movie/${id}`}>{title}</Link>
       </h2>
       <p>{summary}</p>
       <ul>
@@ -21,6 +21,7 @@ function Movie({ coverImg, title, summary, genres }) {
 }
 
 Movie.propTypes = {
+  id: PropTypes.number.isRequired,
   coverImg: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
